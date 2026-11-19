@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phone Store Reims | Réparation smartphones et tablettes, 7 rue des Capucins</title>
+<meta name="description" content="Phone Store répare smartphones et tablettes toutes marques en centre-ville de Reims : écran, batterie, connecteur de charge, oxydation. Tarifs en ligne et prise de rendez-vous.">
+<meta property="og:title" content="Phone Store Reims | Réparation smartphones et tablettes">
+<meta property="og:description" content="Écran, batterie, connecteur de charge, oxydation. Tarifs en ligne et rendez-vous, galerie des Capucins à Reims.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1B5FC4">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script>try{if(sessionStorage.getItem('ps-intro')&&!/[?&]intro=1/.test(location.search))document.documentElement.classList.add('no-intro')}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobilePhoneStore",
+  "name": "Phone Store Reims",
+  "telephone": "+33659261531",
+  "email": "phonestorereims@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Galerie des Capucins, 7 rue des Capucins",
+    "postalCode": "51100",
+    "addressLocality": "Reims",
+    "addressCountry": "FR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 49.2530379, "longitude": 4.0285376 },
+  "openingHours": ["Tu-Fr 11:00-18:00", "Sa 11:00-17:00"],
+  "sameAs": ["https://www.facebook.com/PHONE.STORE.REIMS/"]
+}
+</script>
+<style>
+/* ------------------------------------------------------------------
+   Jetons
+   tapis  = bleu du tapis antistatique d'atelier
+   manche = jaune du manche de tournevis de précision
+------------------------------------------------------------------- */
+:root{
+  --tapis:#1B5FC4;
+  --tapis-fonce:#134896;
+  --encre:#0E2038;
+  --etabli:#EEF2F5;
+  --papier:#FFFFFF;
+  --manche:#FFC93C;
+  --felure:#E5484D;
+  --ok:#1FA971;
+  --trait:rgba(14,32,56,.14);
+  --trait-clair:rgba(255,255,255,.22);
+  --gris:#52627A;
+  --titre:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
+  --texte:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --large:1180px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{margin:0;font-family:var(--texte);font-size:1.0625rem;line-height:1.55;color:var(--encre);background:var(--etabli);-webkit-font-smoothing:antialiased}
+body.is-locked{overflow:hidden}
+h1,h2,h3,p,ul,ol,dl,dd,figure,fieldset{margin:0;padding:0}
+ul,ol{list-style:none}
+fieldset{border:0;min-width:0}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+img,svg{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--manche);outline-offset:3px;border-radius:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+.cadre{width:min(100% - 2.5rem,var(--large));margin-inline:auto}
+.bloc{padding-block:clamp(4rem,9vw,7.5rem)}
+.titre-2{font-family:var(--titre);font-stretch:78%;font-weight:800;font-size:clamp(2.2rem,5.2vw,3.9rem);line-height:.98;letter-spacing:-.015em}
+.chapo{max-width:38rem;margin-top:1.1rem;font-size:1.15rem;color:var(--gris)}
+
+.tapis{
+  background-color:var(--tapis);
+  background-image:
+    linear-gradient(rgba(255,255,255,.13) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.13) 1px,transparent 1px),
+    linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);
+  background-size:96px 96px,96px 96px,16px 16px,16px 16px;
+  background-position:-1px -1px;
+  color:#fff;
+}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:3.25rem;padding:.8rem 1.5rem;border:2px solid transparent;border-radius:999px;font-weight:700;font-size:1.02rem;text-decoration:none;line-height:1.1;white-space:nowrap;transition:transform .15s ease,background-color .15s ease}
+.btn:active{transform:translateY(1px)}
+.btn-jaune{background:var(--manche);color:var(--encre)}
+.btn-jaune:hover{background:#ffd866}
+.btn-contour{border-color:rgba(255,255,255,.6);color:#fff;background:transparent}
+.btn-contour:hover{background:rgba(255,255,255,.12)}
+.btn-encre{background:var(--encre);color:#fff}
+.btn-encre:hover{background:#18365c}
+.btn-ligne{border-color:var(--encre);background:transparent;color:var(--encre)}
+.btn-ligne:hover{background:rgba(14,32,56,.06)}
+.btn-petit{min-height:2.5rem;padding:.45rem 1rem;font-size:.92rem}
+
+/* ------------------------------------------------------------------
+   Intro : le téléphone réparé sur le tapis
+------------------------------------------------------------------- */
+.intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;overflow:hidden;transition:opacity .6s ease,visibility .6s ease}
+.intro.is-done{opacity:0;visibility:hidden;pointer-events:none}
+.no-intro .intro{display:none}
+.intro svg{width:min(150vw,86vh);max-width:none;height:auto;overflow:visible}
+.intro-passer{position:absolute;left:50%;bottom:max(1.5rem,env(safe-area-inset-bottom));transform:translateX(-50%);background:rgba(8,28,66,.45);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:.6rem 1.2rem;font-weight:600;font-size:.95rem}
+.intro-passer:hover{background:rgba(8,28,66,.7)}
+
+.i-phone,.i-vis,.i-vieux,.i-neuf{transform-box:fill-box;transform-origin:center}
+.i-vieux{transform-origin:0% 100%}
+.i-twist{transform-origin:0 0}
+.i-coche{stroke-dasharray:64;stroke-dashoffset:64}
+.i-mot{font-family:var(--titre);font-stretch:78%;font-weight:800}
+.i-eclat,.i-allume,.i-rond,.i-mot{opacity:0}
+.i-tournevis{transform:translate(900px,760px)}
+
+.intro.play .i-phone{animation:i-chute 5.2s both}
+.intro.play .i-eclat{animation:i-eclat 5.2s both}
+.intro.play .i-tournevis{animation:i-tournevis 5.2s both cubic-bezier(.3,.7,.2,1)}
+.intro.play .i-twist{animation:i-twist 5.2s both linear}
+.intro.play .i-vis1{animation:i-vis1 5.2s both}
+.intro.play .i-vis2{animation:i-vis2 5.2s both}
+.intro.play .i-vieux{animation:i-vieux 5.2s both}
+.intro.play .i-neuf{animation:i-neuf 5.2s both cubic-bezier(.3,.7,.2,1)}
+.intro.play .i-allume{animation:i-allume 5.2s both}
+.intro.play .i-rond{animation:i-rond 5.2s both}
+.intro.play .i-coche{animation:i-coche 5.2s both}
+.intro.play .i-mot{animation:i-mot 5.2s both}
+
+@keyframes i-chute{0%{opacity:0;transform:scale(1.14) translateY(-26px)}8%{opacity:1;transform:scale(.985)}11%,100%{opacity:1;transform:none}}
+@keyframes i-eclat{0%,9%{opacity:0}11%{opacity:.45}13%{opacity:0}16%{opacity:.3}18%{opacity:.05}23%{opacity:.28}26%,100%{opacity:0}}
+@keyframes i-tournevis{0%,16%{transform:translate(900px,760px)}25%,33%{transform:translate(282px,511px)}37%,45%{transform:translate(318px,511px)}56%,100%{transform:translate(900px,760px)}}
+@keyframes i-twist{0%,25%{transform:rotate(0)}27%{transform:rotate(-8deg)}29%{transform:rotate(6deg)}31%{transform:rotate(-8deg)}33%,37%{transform:rotate(0)}39%{transform:rotate(-8deg)}41%{transform:rotate(6deg)}43%{transform:rotate(-8deg)}45%,100%{transform:rotate(0)}}
+@keyframes i-vis1{0%,28%{transform:none}34%,70%{transform:translate(-152px,-14px) rotate(-540deg)}75%,100%{transform:none}}
+@keyframes i-vis2{0%,40%{transform:none}46%,72%{transform:translate(-196px,20px) rotate(-540deg)}77%,100%{transform:none}}
+@keyframes i-vieux{0%,47%{opacity:1;transform:none}58%{opacity:1;transform:translate(-205px,-30px) rotate(-20deg)}63%,100%{opacity:0;transform:translate(-240px,-14px) rotate(-25deg)}}
+@keyframes i-neuf{0%,58%{opacity:0;transform:translateY(-170px) scale(1.04)}60%{opacity:1;transform:translateY(-160px) scale(1.04)}70%{opacity:1;transform:translateY(3px) scale(1)}73%,100%{opacity:1;transform:none}}
+@keyframes i-allume{0%,77%{opacity:0}84%,100%{opacity:1}}
+@keyframes i-rond{0%,80%{opacity:0}85%,100%{opacity:1}}
+@keyframes i-coche{0%,82%{stroke-dashoffset:64}90%,100%{stroke-dashoffset:0}}
+@keyframes i-mot{0%,86%{opacity:0}93%,100%{opacity:1}}
+
+/* ------------------------------------------------------------------
+   En-tête
+------------------------------------------------------------------- */
+.entete{position:absolute;top:0;left:0;right:0;z-index:10;color:#fff}
+.entete-ligne{display:flex;align-items:center;gap:1.5rem;padding-block:1.1rem}
+.logo{display:flex;align-items:baseline;gap:.5rem;text-decoration:none;font-family:var(--titre);font-stretch:78%;font-weight:800;font-size:1.65rem;letter-spacing:-.01em;line-height:1}
+.logo small{font-family:var(--texte);font-stretch:100%;font-weight:600;font-size:.9rem;opacity:.8}
+.nav{display:flex;gap:1.6rem;margin-left:auto}
+.nav a{text-decoration:none;font-weight:600;font-size:.98rem;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav a:hover{border-bottom-color:var(--manche)}
+.entete-tel{font-weight:700;text-decoration:none;white-space:nowrap}
+.entete-tel:hover{text-decoration:underline}
+
+/* ------------------------------------------------------------------
+   Accueil
+------------------------------------------------------------------- */
+.accueil{position:relative;overflow:hidden;padding-top:clamp(7rem,13vw,10rem);padding-bottom:clamp(4rem,8vw,6.5rem)}
+.accueil-grille{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+.titre-1{font-family:var(--titre);font-stretch:75%;font-weight:800;font-size:clamp(3.1rem,8.6vw,7.25rem);line-height:.88;letter-spacing:-.022em;text-wrap:balance}
+.accueil-texte{max-width:33rem;margin-top:1.6rem;font-size:1.2rem;line-height:1.5;color:rgba(255,255,255,.92)}
+.accueil-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.1rem}
+.accueil-avis{display:inline-flex;align-items:center;gap:.7rem;margin-top:2.2rem;text-decoration:none;font-size:.98rem;color:rgba(255,255,255,.92)}
+.accueil-avis strong{font-family:var(--titre);font-stretch:78%;font-weight:800;font-size:1.9rem;line-height:1;color:var(--manche)}
+.accueil-avis span{border-bottom:1px solid rgba(255,255,255,.45)}
+.accueil-avis:hover span{border-bottom-color:#fff}
+
+.etabli{position:relative;justify-self:center;width:min(100%,21.5rem);padding-block:1rem}
+.outils{position:absolute;top:-7%;left:-30%;width:164%;max-width:none;height:114%;pointer-events:none}
+.tel{position:relative;width:min(100%,18.5rem);margin-inline:auto;aspect-ratio:9/17;padding:.55rem .55rem 2.35rem;border-radius:2.6rem;background:var(--encre);box-shadow:14px 22px 0 rgba(8,28,66,.32);transform:rotate(3.5deg)}
+.tel-ecran{height:100%;display:flex;flex-direction:column;border-radius:2.1rem;background:#F6F9FC;color:var(--encre);padding:1.5rem 1.2rem 1.2rem;overflow:hidden}
+.tel-bas{position:absolute;left:0;right:0;bottom:.82rem;display:flex;justify-content:center;align-items:center;gap:.7rem}
+.tel-bas i{width:.5rem;height:.5rem;border-radius:50%;background:#5b7ba6;box-shadow:inset 0 0 0 1.5px #0b1a2e}
+.tel-bas b{width:1.6rem;height:.45rem;border-radius:.3rem;background:#06101f}
+.tel-etat{display:flex;align-items:center;gap:.5rem;font-weight:700;font-size:.95rem}
+.pastille{width:.65rem;height:.65rem;border-radius:50%;background:var(--felure);flex:none}
+.is-ouvert .pastille{background:var(--ok)}
+.tel-question{margin-top:1.7rem;font-size:.92rem;color:var(--gris);font-weight:600}
+.tel-semaine{display:flex;justify-content:space-between;margin-top:auto;padding-top:1rem;border-top:1px solid var(--trait)}
+.tel-semaine li{display:grid;place-items:center;width:1.85rem;height:1.85rem;border-radius:50%;font-size:.8rem;font-weight:700;color:#9aa7b8;border:1.5px solid #d3dbe4}
+.tel-semaine li.is-ouvert{background:var(--encre);border-color:var(--encre);color:#fff}
+.tel-semaine li.is-jour{box-shadow:0 0 0 3px var(--manche)}
+.tel-creneau{font-family:var(--titre);font-stretch:78%;font-weight:800;font-size:clamp(1.7rem,2.6vw,2.15rem);line-height:1;margin-top:.35rem;letter-spacing:-.01em}
+.tel-ecran .btn{width:100%;margin-top:1.1rem;min-height:3rem;font-size:.98rem;padding-inline:.8rem}
+.tel-horaires{margin-top:.8rem;font-size:.86rem;color:var(--gris);line-height:1.45}
+
+/* ------------------------------------------------------------------
+   Réparations : une seule surface quadrillée, comme un tapis à vis
+------------------------------------------------------------------- */
+.reparations-tete{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem;align-items:end}
+.casier{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:3rem;background:var(--papier);border:2px solid var(--encre);border-radius:1.25rem;overflow:hidden}
+.casier li{padding:1.6rem 1.4rem 1.7rem;border-right:1px dashed rgba(14,32,56,.3);border-bottom:1px dashed rgba(14,32,56,.3)}
+.casier li:nth-child(4n){border-right:0}
+.casier li:nth-last-child(-n+4){border-bottom:0}
+.casier svg{width:2.4rem;height:2.4rem;color:var(--tapis)}
+.casier h3{font-family:var(--titre);font-stretch:80%;font-weight:700;font-size:1.3rem;line-height:1.1;margin-top:1rem}
+.casier p{margin-top:.45rem;font-size:.97rem;color:var(--gris);line-height:1.45}
+.marques{margin-top:1.6rem;color:var(--gris);max-width:46rem}
+.marques strong{color:var(--encre)}
+
+/* ------------------------------------------------------------------
+   Tarifs
+------------------------------------------------------------------- */
+.tarifs{background:var(--papier)}
+.tarifs-grille{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(2rem,5vw,4.5rem);margin-top:3rem;align-items:start}
+.choix-titre{font-weight:700;font-size:.98rem;margin-bottom:.7rem}
+.choix + .choix{margin-top:1.8rem}
+.puces{display:flex;flex-wrap:wrap;gap:.5rem}
+.puce{min-height:2.75rem;padding:.5rem 1rem;border:1.5px solid rgba(14,32,56,.3);border-radius:999px;background:transparent;font-weight:600;font-size:.97rem;line-height:1.1}
+.puce:hover{border-color:var(--encre)}
+.puce.is-on{background:var(--encre);border-color:var(--encre);color:#fff}
+.puce:disabled{opacity:.35;cursor:not-allowed}
+.grille-prix{border-top:2px solid var(--encre)}
+.grille-prix caption{caption-side:top;text-align:left;font-family:var(--titre);font-stretch:80%;font-weight:800;font-size:1.7rem;line-height:1.1;padding-bottom:.9rem}
+table{width:100%;border-collapse:collapse}
+.grille-prix th,.grille-prix td{padding:.95rem 0;border-bottom:1px solid var(--trait);text-align:left;vertical-align:middle}
+.grille-prix th{font-weight:600;font-size:1.05rem}
+.grille-prix .prix{text-align:right;font-family:var(--titre);font-stretch:80%;font-weight:800;font-size:1.45rem;font-variant-numeric:tabular-nums;white-space:nowrap;padding-right:1.1rem}
+.grille-prix .prix.devis{font-family:var(--texte);font-weight:600;font-size:.98rem;color:var(--gris)}
+.grille-prix .act{text-align:right;width:1%}
+.note{margin-top:1.1rem;font-size:.93rem;color:var(--gris);max-width:36rem}
+
+/* ------------------------------------------------------------------
+   Rendez-vous : le bon de prise en charge
+------------------------------------------------------------------- */
+.rdv{background:var(--encre);color:#fff}
+.rdv .chapo{color:rgba(255,255,255,.78)}
+.bon{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);margin-top:3rem;background:var(--papier);color:var(--encre);border-radius:1.25rem;overflow:hidden}
+.bon-form{padding:clamp(1.4rem,3.5vw,2.75rem)}
+.etape + .etape{margin-top:2.2rem;padding-top:2.2rem;border-top:1px dashed rgba(14,32,56,.3)}
+.etape-titre{display:flex;align-items:center;gap:.7rem;font-family:var(--titre);font-stretch:80%;font-weight:800;font-size:1.45rem;line-height:1.1;margin-bottom:1.1rem;padding:0}
+.etape-titre b{display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--manche);font-size:1.05rem;flex:none}
+.champs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.champ label,.sous-titre{display:block;font-weight:600;font-size:.94rem;margin-bottom:.4rem}
+.champ input,.champ select,.champ textarea{width:100%;min-height:3rem;padding:.65rem .9rem;border:1.5px solid rgba(14,32,56,.3);border-radius:.7rem;background:#fff}
+.champ textarea{min-height:5.5rem;resize:vertical}
+.champ input:hover,.champ select:hover,.champ textarea:hover{border-color:var(--encre)}
+.champ-large{grid-column:1/-1}
+.sous-titre{margin-top:1.3rem}
+.radio-puces{display:flex;flex-wrap:wrap;gap:.5rem}
+.radio-puces label{position:relative;display:inline-flex;align-items:center;min-height:2.75rem;padding:.5rem 1rem;border:1.5px solid rgba(14,32,56,.3);border-radius:999px;font-weight:600;font-size:.97rem;cursor:pointer}
+.radio-puces label:hover{border-color:var(--encre)}
+.radio-puces input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.radio-puces label:has(input:checked){background:var(--encre);border-color:var(--encre);color:#fff}
+.radio-puces label:has(input:focus-visible){outline:3px solid var(--manche);outline-offset:3px}
+.vide{font-size:.97rem;color:var(--gris)}
+
+.bon-talon{position:relative;display:flex;flex-direction:column;padding:clamp(1.4rem,3vw,2.4rem);background:#F4F7FA;border-left:2px dashed rgba(14,32,56,.35)}
+.bon-talon h3{font-family:var(--titre);font-stretch:80%;font-weight:800;font-size:1.45rem;line-height:1.1}
+.recap{margin-top:1.2rem}
+.recap div{padding:.75rem 0;border-bottom:1px solid var(--trait)}
+.recap dt{font-size:.86rem;font-weight:600;color:var(--gris)}
+.recap dd{font-weight:700;font-size:1.05rem;line-height:1.3;margin-top:.1rem;overflow-wrap:anywhere}
+.recap dd.is-vide{font-weight:500;color:#8a97a8}
+.envoi{display:grid;gap:.6rem;margin-top:1.6rem}
+.envoi .btn{width:100%}
+.alerte{margin-top:1rem;padding:.8rem 1rem;border-radius:.7rem;font-size:.95rem;font-weight:600;line-height:1.4}
+.alerte:empty{display:none}
+.alerte.is-erreur{background:#fdecec;color:#a4262c}
+.alerte.is-ok{background:#e3f6ee;color:#11694a}
+.talon-note{margin-top:1.2rem;font-size:.9rem;color:var(--gris);line-height:1.45}
+
+/* ------------------------------------------------------------------
+   Infos pratiques
+------------------------------------------------------------------- */
+.infos-grille{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(2rem,5vw,4.5rem);margin-top:3rem;align-items:start}
+.adresse{font-family:var(--titre);font-stretch:80%;font-weight:700;font-size:1.6rem;line-height:1.2;font-style:normal}
+.etat-ligne{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.1rem;font-weight:700}
+.horaires{margin-top:1.4rem;border-top:2px solid var(--encre)}
+.horaires th,.horaires td{padding:.7rem 0;border-bottom:1px solid var(--trait);text-align:left;font-weight:500}
+.horaires td{text-align:right;font-variant-numeric:tabular-nums}
+.horaires tr.is-jour th,.horaires tr.is-jour td{font-weight:800}
+.horaires tr.is-ferme td{color:var(--gris)}
+.contacts{display:grid;gap:.5rem;margin-top:1.6rem}
+.contacts a{font-weight:700;text-decoration-thickness:1.5px;text-underline-offset:3px;width:fit-content}
+.contacts a:hover{color:var(--tapis)}
+.carte{border:2px solid var(--encre);border-radius:1.25rem;overflow:hidden;background:#dfe6ec}
+.carte iframe{display:block;width:100%;height:clamp(20rem,42vw,30rem);border:0}
+.carte-lien{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding:1rem 1.2rem;background:var(--papier);border-top:2px solid var(--encre);font-size:.97rem}
+
+/* ------------------------------------------------------------------
+   Pied de page et barre mobile
+------------------------------------------------------------------- */
+.pied{background:var(--encre);color:rgba(255,255,255,.8);padding-block:2.2rem;font-size:.94rem}
+.pied-ligne{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;justify-content:space-between}
+.pied strong{color:#fff}
+.pied-liens{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
+.pied a,.pied button{color:inherit;background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px}
+.pied a:hover,.pied button:hover{color:#fff}
+.barre{display:none}
+
+@media (max-width:960px){
+  .nav{display:none}
+  .entete-tel{margin-left:auto}
+  .accueil-grille{grid-template-columns:1fr}
+  .etabli{margin-top:1.5rem}
+  .reparations-tete{grid-template-columns:1fr}
+  .casier{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .casier li:nth-child(4n){border-right:1px dashed rgba(14,32,56,.3)}
+  .casier li:nth-child(2n){border-right:0}
+  .casier li:nth-last-child(-n+4){border-bottom:1px dashed rgba(14,32,56,.3)}
+  .casier li:nth-last-child(-n+2){border-bottom:0}
+  .tarifs-grille,.infos-grille,.bon{grid-template-columns:1fr}
+  .bon-talon{border-left:0;border-top:2px dashed rgba(14,32,56,.35)}
+}
+@media (max-width:640px){
+  body{padding-bottom:4.6rem}
+  .entete .btn{display:none}
+  .champs{grid-template-columns:1fr}
+  .casier li{padding:1.2rem 1rem 1.3rem}
+  .casier h3{font-size:1.12rem}
+  .grille-prix .prix{font-size:1.25rem;padding-right:.7rem}
+  .barre{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:1fr 1.35fr;gap:.6rem;padding:.6rem .8rem max(.6rem,env(safe-area-inset-bottom));background:var(--papier);border-top:2px solid var(--encre)}
+  .barre .btn{min-height:3rem;padding-inline:.8rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .intro{display:none}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= Intro animée ================= -->
+<div class="intro tapis" id="intro" aria-hidden="true">
+  <svg viewBox="0 0 600 620" role="img" aria-label="Un téléphone à l'écran fissuré est démonté puis réparé">
+    <defs>
+      <linearGradient id="i-lumiere" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E6EEF7"/>
+      </linearGradient>
+    </defs>
+    <g class="i-phone">
+      <rect x="204" y="92" width="220" height="460" rx="36" fill="#081C42" opacity=".32"/>
+      <rect x="190" y="70" width="220" height="460" rx="36" fill="#0E2038"/>
+      <!-- intérieur -->
+      <rect x="199" y="79" width="202" height="412" rx="28" fill="#17304F"/>
+      <rect x="214" y="206" width="112" height="226" rx="10" fill="#0B1A2E" stroke="#3B5A85" stroke-width="2"/>
+      <rect x="228" y="226" width="52" height="6" rx="3" fill="#3B5A85"/>
+      <rect x="228" y="240" width="34" height="6" rx="3" fill="#3B5A85"/>
+      <rect x="252" y="418" width="36" height="22" rx="5" fill="#FFC93C"/>
+      <rect x="338" y="96" width="50" height="380" rx="8" fill="#1C7C5D"/>
+      <rect x="346" y="126" width="34" height="34" rx="4" fill="#0B1A2E"/>
+      <rect x="346" y="196" width="34" height="52" rx="4" fill="#0B1A2E"/>
+      <rect x="346" y="300" width="34" height="24" rx="4" fill="#0B1A2E"/>
+      <rect x="350" y="356" width="26" height="8" rx="2" fill="#FFC93C"/>
+      <rect x="350" y="372" width="26" height="8" rx="2" fill="#FFC93C"/>
+      <circle cx="244" cy="134" r="27" fill="#0B1A2E" stroke="#5B7BA6" stroke-width="3"/>
+      <circle cx="244" cy="134" r="12" fill="#26466F"/>
+      <circle cx="298" cy="118" r="11" fill="#0B1A2E" stroke="#5B7BA6" stroke-width="2"/>
+      <path d="M338 272H326M300 442v28h60" fill="none" stroke="#FFC93C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="214" y="450" width="66" height="26" rx="6" fill="#0B1A2E"/>
+      <!-- écran neuf -->
+      <g class="i-neuf">
+        <rect x="199" y="79" width="202" height="412" rx="28" fill="#060D18"/>
+        <rect class="i-allume" x="199" y="79" width="202" height="412" rx="28" fill="url(#i-lumiere)"/>
+        <circle class="i-rond" cx="300" cy="238" r="38" fill="#1FA971"/>
+        <path class="i-coche" d="M282 239l13 13 24-27" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="i-mot" x="300" y="336" text-anchor="middle" font-size="35" fill="#0E2038">Phone Store</text>
+        <text class="i-mot" x="300" y="364" text-anchor="middle" font-size="19" fill="#52627A" style="font-weight:600">Reims</text>
+      </g>
+      <!-- écran fissuré -->
+      <g class="i-vieux">
+        <rect x="199" y="79" width="202" height="412" rx="28" fill="#060D18"/>
+        <rect class="i-eclat" x="199" y="79" width="202" height="412" rx="28" fill="#E5484D"/>
+        <path d="M262 214L201 152M262 214L232 82M262 214L328 81M262 214L400 192M262 214L400 332M262 214L300 490M262 214L200 362M236 150l62-10 44 58M224 282l66 20 56-30M279 352l52 22M246 96l28 44" fill="none" stroke="#fff" stroke-opacity=".78" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="262" cy="214" r="5" fill="#fff" fill-opacity=".85"/>
+      </g>
+      <!-- bas du châssis -->
+      <rect x="291" y="506" width="18" height="10" rx="5" fill="#06101F"/>
+      <g class="i-vis i-vis1"><g transform="translate(282 511)"><circle r="5.5" fill="#9FB3CC"/><path d="M-3 0H3M0-3V3" stroke="#0B1A2E" stroke-width="1.6" stroke-linecap="round"/></g></g>
+      <g class="i-vis i-vis2"><g transform="translate(318 511)"><circle r="5.5" fill="#9FB3CC"/><path d="M-3 0H3M0-3V3" stroke="#0B1A2E" stroke-width="1.6" stroke-linecap="round"/></g></g>
+    </g>
+    <!-- tournevis -->
+    <g class="i-tournevis"><g class="i-twist"><g transform="rotate(-60)">
+      <path d="M0 0l-3.5 12h7z" fill="#7F8EA3"/>
+      <rect x="-3.5" y="10" width="7" height="112" fill="#D5DDE7"/>
+      <rect x="-8" y="118" width="16" height="16" rx="3" fill="#7F8EA3"/>
+      <rect x="-15" y="132" width="30" height="128" rx="13" fill="#FFC93C"/>
+      <path d="M-6 150v84M0 150v84M6 150v84" stroke="#D9A21B" stroke-width="2.5" stroke-linecap="round"/>
+      <rect x="-15" y="244" width="30" height="16" rx="8" fill="#0E2038"/>
+    </g></g></g>
+  </svg>
+  <button class="intro-passer" id="introPasser" type="button">Passer l'intro</button>
+</div>
+
+<!-- ================= En-tête ================= -->
+<header class="entete">
+  <div class="cadre entete-ligne">
+    <a class="logo" href="#accueil">Phone Store <small>Reims</small></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#reparations">Réparations</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#infos">Adresse et horaires</a>
+    </nav>
+    <a class="entete-tel" href="tel:+33659261531">06 59 26 15 31</a>
+    <a class="btn btn-jaune btn-petit" href="#rdv">Prendre rendez-vous</a>
+  </div>
+</header>
+
+<main>
+<!-- ================= Accueil ================= -->
+<section class="accueil tapis" id="accueil">
+  <div class="cadre accueil-grille">
+    <div>
+      <h1 class="titre-1">On remet votre téléphone en état.</h1>
+      <p class="accueil-texte">Écran fissuré, batterie fatiguée, connecteur de charge, téléphone tombé dans l'eau. Atelier de réparation smartphones et tablettes toutes marques, galerie des Capucins, en plein centre de Reims.</p>
+      <div class="accueil-actions">
+        <a class="btn btn-jaune" href="#rdv">Prendre rendez-vous</a>
+        <a class="btn btn-contour" href="#tarifs">Voir les tarifs</a>
+      </div>
+      <a class="accueil-avis" href="https://www.google.com/maps/search/?api=1&query=Phone+Store+Reims&query_place_id=ChIJhU9AF7t16UcRmENQhazAxyk" target="_blank" rel="noopener">
+        <strong>4,9/5</strong><span>sur 1 277 avis Google</span>
+      </a>
+    </div>
+
+    <div class="etabli">
+      <svg class="outils" viewBox="0 0 560 700" aria-hidden="true">
+        <g transform="translate(486 372) rotate(-10)">
+          <path d="M0 0l-3.5 12h7z" fill="#7F8EA3"/>
+          <rect x="-3.5" y="10" width="7" height="92" fill="#D5DDE7"/>
+          <rect x="-8" y="98" width="16" height="16" rx="3" fill="#7F8EA3"/>
+          <rect x="-15" y="112" width="30" height="118" rx="13" fill="#FFC93C"/>
+          <path d="M-6 130v74M0 130v74M6 130v74" stroke="#D9A21B" stroke-width="2.5" stroke-linecap="round"/>
+          <rect x="-15" y="214" width="30" height="16" rx="8" fill="#0E2038"/>
+        </g>
+        <g fill="#C9D6E6" stroke="#0E2038" stroke-width="1.4" stroke-linecap="round">
+          <g transform="translate(52 560)"><circle r="7" stroke="none"/><path d="M-3.5 0H3.5M0-3.5V3.5"/></g>
+          <g transform="translate(84 588) rotate(30)"><circle r="7" stroke="none"/><path d="M-3.5 0H3.5M0-3.5V3.5"/></g>
+        </g>
+      </svg>
+      <div class="tel" id="tel">
+        <div class="tel-ecran">
+          <p class="tel-etat" data-etat><span class="pastille"></span><span data-etat-texte>Horaires ci-dessous</span></p>
+          <p class="tel-question">Prochain créneau libre</p>
+          <p class="tel-creneau" id="telCreneau">Sur rendez-vous</p>
+          <button class="btn btn-encre" id="telReserver" type="button">Réserver ce créneau</button>
+          <ol class="tel-semaine" id="telSemaine" aria-hidden="true"></ol>
+          <p class="tel-horaires">Mardi au vendredi, 11h à 18h<br>Samedi, 11h à 17h</p>
+        </div>
+        <div class="tel-bas" aria-hidden="true"><i></i><b></b><i></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Réparations ================= -->
+<section class="bloc" id="reparations">
+  <div class="cadre">
+    <div class="reparations-tete">
+      <h2 class="titre-2">Ce qu'on répare</h2>
+      <p class="chapo">Les pannes les plus courantes ont un tarif affiché plus bas. Pour le reste, passez en boutique ou appelez : on regarde l'appareil et on vous annonce le prix avant de toucher à quoi que ce soit.</p>
+    </div>
+    <ul class="casier">
+      <li>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="13" y="4" width="22" height="40" rx="5"/><path d="M26 4l-5 12 6 6-7 10 4 12"/></svg>
+        <h3>Écran cassé</h3>
+        <p>Vitre fissurée, tactile qui ne répond plus, taches ou lignes à l'affichage.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="15" width="32" height="18" rx="4"/><path d="M42 21v6M24 18l-5 7h8l-5 7"/></svg>
+        <h3>Batterie</h3>
+        <p>Autonomie en chute, téléphone qui s'éteint tout seul, batterie gonflée.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6v10M30 6v10M12 16h24v8a12 12 0 01-24 0zM24 36v8"/></svg>
+        <h3>Connecteur de charge</h3>
+        <p>Le câble ne tient plus, la charge se coupe ou ne démarre pas.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="13" width="38" height="27" rx="5"/><path d="M17 13l3-5h8l3 5"/><circle cx="24" cy="26" r="7"/></svg>
+        <h3>Appareil photo</h3>
+        <p>Photos floues, lentille fêlée, caméra qui reste noire.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 5s13 14 13 24a13 13 0 01-26 0C11 19 24 5 24 5z"/><path d="M18 30a6 6 0 006 6"/></svg>
+        <h3>Tombé dans l'eau</h3>
+        <p>Désoxydation et nettoyage de la carte mère. Éteignez-le et apportez-le vite.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="13" y="4" width="22" height="40" rx="5"/><rect x="18" y="9" width="8" height="8" rx="3"/></svg>
+        <h3>Vitre arrière</h3>
+        <p>Dos fissuré ou éclaté, remplacé sans changer le téléphone.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 19v10h8l10 9V10l-10 9zM33 18a9 9 0 010 12M38 13a16 16 0 010 22"/></svg>
+        <h3>Micro et haut-parleur</h3>
+        <p>On vous entend mal, le son grésille ou a disparu.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 17h30l-7-7M40 31H10l7 7"/></svg>
+        <h3>Logiciel et données</h3>
+        <p>Blocage au démarrage, transfert vers un nouveau téléphone, remise à zéro.</p>
+      </li>
+    </ul>
+    <p class="marques"><strong>Smartphones et tablettes, toutes marques :</strong> Apple, Samsung, Xiaomi, Google, Huawei, Oppo, Honor. Accessoires disponibles en boutique : coques, verres trempés, chargeurs.</p>
+  </div>
+</section>
+
+<!-- ================= Tarifs ================= -->
+<section class="bloc tarifs" id="tarifs">
+  <div class="cadre">
+    <h2 class="titre-2">Les tarifs, modèle par modèle</h2>
+    <p class="chapo">Choisissez votre appareil pour voir le prix de chaque réparation.</p>
+    <div class="tarifs-grille">
+      <div>
+        <div class="choix">
+          <p class="choix-titre" id="lblMarque">Marque</p>
+          <div class="puces" id="marques" role="group" aria-labelledby="lblMarque"></div>
+        </div>
+        <div class="choix">
+          <p class="choix-titre" id="lblModele">Modèle</p>
+          <div class="puces" id="modeles" role="group" aria-labelledby="lblModele"></div>
+        </div>
+        <p class="note">Votre modèle n'est pas dans la liste ? <a href="tel:+33659261531">Appelez le 06 59 26 15 31</a> ou passez en boutique pour un devis.</p>
+      </div>
+      <div>
+        <table class="grille-prix" aria-live="polite">
+          <caption id="prixTitre"></caption>
+          <thead class="sr"><tr><th scope="col">Réparation</th><th scope="col">Prix</th><th scope="col">Action</th></tr></thead>
+          <tbody id="prixLignes"></tbody>
+        </table>
+        <p class="note">Tarifs indicatifs en euros TTC. Le prix définitif vous est confirmé en boutique, avant la réparation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Rendez-vous ================= -->
+<section class="bloc rdv" id="rdv">
+  <div class="cadre">
+    <h2 class="titre-2">Prendre rendez-vous</h2>
+    <p class="chapo">Remplissez le bon, choisissez un créneau et envoyez votre demande. Phone Store vous confirme le rendez-vous par message.</p>
+
+    <form class="bon" id="bon" novalidate>
+      <div class="bon-form">
+        <div class="etape" role="group" aria-labelledby="etape1">
+          <h3 class="etape-titre" id="etape1"><b>1</b> Votre appareil</h3>
+          <div class="champs">
+            <div class="champ">
+              <label for="fMarque">Marque</label>
+              <select id="fMarque" name="marque"></select>
+            </div>
+            <div class="champ">
+              <label for="fModele">Modèle</label>
+              <select id="fModele" name="modele"></select>
+            </div>
+            <div class="champ champ-large" id="champAutre" hidden>
+              <label for="fAutre">Précisez la marque et le modèle</label>
+              <input id="fAutre" name="autre" type="text" autocomplete="off" placeholder="Exemple : Oppo Reno 10">
+            </div>
+          </div>
+        </div>
+
+        <div class="etape" role="group" aria-labelledby="etape2">
+          <h3 class="etape-titre" id="etape2"><b>2</b> La panne</h3>
+          <div class="radio-puces" id="fPannes"></div>
+        </div>
+
+        <div class="etape" role="group" aria-labelledby="etape3">
+          <h3 class="etape-titre" id="etape3"><b>3</b> Le créneau</h3>
+          <p class="sous-titre" id="lblJour" style="margin-top:0">Jour</p>
+          <div class="puces" id="fJours" role="group" aria-labelledby="lblJour"></div>
+          <p class="sous-titre" id="lblHeure">Heure</p>
+          <div class="puces" id="fHeures" role="group" aria-labelledby="lblHeure"></div>
+        </div>
+
+        <div class="etape" role="group" aria-labelledby="etape4">
+          <h3 class="etape-titre" id="etape4"><b>4</b> Vos coordonnées</h3>
+          <div class="champs">
+            <div class="champ">
+              <label for="fNom">Nom et prénom</label>
+              <input id="fNom" name="nom" type="text" autocomplete="name" required>
+            </div>
+            <div class="champ">
+              <label for="fTel">Téléphone</label>
+              <input id="fTel" name="tel" type="tel" autocomplete="tel" inputmode="tel" required placeholder="06 12 34 56 78">
+            </div>
+            <div class="champ champ-large">
+              <label for="fNote">Un détail à signaler (facultatif)</label>
+              <textarea id="fNote" name="note" placeholder="Exemple : l'écran s'allume mais le tactile ne répond plus en bas."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="bon-talon" aria-label="Récapitulatif de votre demande">
+        <h3>Votre demande</h3>
+        <dl class="recap">
+          <div><dt>Appareil</dt><dd id="rAppareil"></dd></div>
+          <div><dt>Réparation</dt><dd id="rPanne"></dd></div>
+          <div><dt>Prix indicatif</dt><dd id="rPrix"></dd></div>
+          <div><dt>Créneau</dt><dd id="rCreneau"></dd></div>
+        </dl>
+        <div class="envoi">
+          <button class="btn btn-jaune" type="button" data-envoi="whatsapp">Envoyer par WhatsApp</button>
+          <button class="btn btn-ligne" type="button" data-envoi="sms">Envoyer par SMS</button>
+          <button class="btn btn-ligne" type="button" data-envoi="email">Envoyer par e-mail</button>
+        </div>
+        <p class="alerte" id="alerte" role="alert"></p>
+        <p class="talon-note">Le créneau est réservé une fois confirmé par la boutique. Vous préférez parler à quelqu'un ? <a href="tel:+33659261531">06 59 26 15 31</a></p>
+      </aside>
+    </form>
+  </div>
+</section>
+
+<!-- ================= Infos pratiques ================= -->
+<section class="bloc" id="infos">
+  <div class="cadre">
+    <h2 class="titre-2">Adresse et horaires</h2>
+    <div class="infos-grille">
+      <div>
+        <address class="adresse">Galerie des Capucins<br>7 rue des Capucins<br>51100 Reims</address>
+        <p class="etat-ligne" data-etat><span class="pastille"></span><span data-etat-texte></span></p>
+        <table class="horaires">
+          <caption class="sr">Horaires d'ouverture</caption>
+          <tbody id="horaires"></tbody>
+        </table>
+        <div class="contacts">
+          <a href="tel:+33659261531">06 59 26 15 31</a>
+          <a href="mailto:phonestorereims@gmail.com">phonestorereims@gmail.com</a>
+          <a href="https://www.facebook.com/PHONE.STORE.REIMS/" target="_blank" rel="noopener">Phone Store sur Facebook</a>
+        </div>
+      </div>
+      <div class="carte">
+        <iframe title="Plan d'accès à Phone Store, 7 rue des Capucins à Reims" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Phone+Store+Reims,+7+Rue+des+Capucins,+51100+Reims&z=17&output=embed"></iframe>
+        <div class="carte-lien">
+          <span>En centre-ville, dans la galerie des Capucins.</span>
+          <a class="btn btn-encre btn-petit" href="https://www.google.com/maps/dir/?api=1&destination=Phone+Store+Reims&destination_place_id=ChIJhU9AF7t16UcRmENQhazAxyk" target="_blank" rel="noopener">Ouvrir l'itinéraire</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="cadre pied-ligne">
+    <p><strong>Phone Store</strong>, galerie des Capucins, 7 rue des Capucins, 51100 Reims</p>
+    <div class="pied-liens">
+      <button type="button" id="introRevoir">Revoir l'animation</button>
+      <!-- À relier à la page de mentions légales (raison sociale, SIREN, hébergeur) -->
+      <a href="#mentions">Mentions légales</a>
+    </div>
+  </div>
+</footer>
+
+<div class="barre">
+  <a class="btn btn-ligne" href="tel:+33659261531">Appeler</a>
+  <a class="btn btn-jaune" href="#rdv">Prendre rendez-vous</a>
+</div>
+
+<script>
+/* ==================================================================
+   CONFIGURATION : tout ce qui change se règle ici
+================================================================== */
+const BOUTIQUE = {
+  telAffiche: '06 59 26 15 31',
+  telIntl: '33659261531',
+  email: 'phonestorereims@gmail.com',
+  // 0 = dimanche … 6 = samedi. null = fermé. Source : fiche Google, nov. 2026.
+  horaires: { 0: null, 1: null, 2: ['11:00', '18:00'], 3: ['11:00', '18:00'], 4: ['11:00', '18:00'], 5: ['11:00', '18:00'], 6: ['11:00', '17:00'] },
+  dureeCreneau: 30,   // minutes
+  delaiMini: 60,      // minutes entre maintenant et le premier créneau proposé
+  joursProposes: 8
+};
+
+const REPARATIONS = ['Écran', 'Batterie', 'Connecteur de charge', 'Vitre arrière', 'Caméra arrière'];
+const PANNES_HORS_GRILLE = ['Tombé dans l\'eau', 'Autre ou je ne sais pas'];
+
+/* ------------------------------------------------------------------
+   TARIFS : VALEURS D'EXEMPLE À REMPLACER PAR LA GRILLE DE LA BOUTIQUE.
+   Ordre des prix = ordre de REPARATIONS. null = « Sur devis ».
+------------------------------------------------------------------- */
+const TARIFS = {
+  'Apple': {
+    'iPhone 16': [229, 99, 99, 149, 149],
+    'iPhone 15': [189, 89, 89, 129, 129],
+    'iPhone 14': [149, 79, 79, 119, 109],
+    'iPhone 13': [119, 69, 69, 99, 99],
+    'iPhone 12': [99, 59, 59, 89, 89],
+    'iPhone 11': [79, 49, 59, 79, 79],
+    'iPhone XR': [69, 45, 49, 69, 69],
+    'iPhone SE': [59, 45, 49, 59, 59]
+  },
+  'Samsung': {
+    'Galaxy S24': [249, 79, 79, 79, 119],
+    'Galaxy S23': [219, 69, 69, 69, 109],
+    'Galaxy S22': [189, 69, 69, 59, 99],
+    'Galaxy S21': [169, 59, 59, 59, 89],
+    'Galaxy A54': [119, 59, 59, 49, 69],
+    'Galaxy A34': [109, 59, 55, 45, 65],
+    'Galaxy A14': [79, 49, 49, 39, 55]
+  },
+  'Xiaomi': {
+    'Xiaomi 13T': [149, 59, 59, 49, 89],
+    'Redmi Note 13': [89, 49, 49, 39, 59],
+    'Redmi Note 12': [79, 49, 49, 39, 55]
+  },
+  'Google': {
+    'Pixel 8': [189, 79, 79, 69, 109],
+    'Pixel 7': [159, 69, 69, 59, 99],
+    'Pixel 7a': [129, 69, 65, 49, 89]
+  },
+  'Tablettes': {
+    'iPad 10e génération': [129, 99, 89, null, null],
+    'iPad 9e génération': [99, 89, 79, null, null],
+    'Galaxy Tab A8': [99, 79, 69, null, null]
+  }
+};
+
+/* ==================================================================
+   Outils
+================================================================== */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const deuxChiffres = n => String(n).padStart(2, '0');
+const enMinutes = hhmm => { const [h, m] = hhmm.split(':').map(Number); return h * 60 + m; };
+const heureFr = min => `${Math.floor(min / 60)}h${min % 60 ? deuxChiffres(min % 60) : ''}`;
+const cleJour = d => `${d.getFullYear()}-${deuxChiffres(d.getMonth() + 1)}-${deuxChiffres(d.getDate())}`;
+const depuisCle = c => { const [y, m, d] = c.split('-').map(Number); return new Date(y, m - 1, d); };
+const euros = n => `${n} €`;
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const NOMS_JOURS = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+
+function creneauxDu(date, maintenant = new Date()) {
+  const h = BOUTIQUE.horaires[date.getDay()];
+  if (!h) return [];
+  const debut = enMinutes(h[0]);
+  const fin = enMinutes(h[1]) - BOUTIQUE.dureeCreneau;
+  let mini = debut;
+  if (cleJour(date) === cleJour(maintenant)) {
+    mini = Math.max(debut, maintenant.getHours() * 60 + maintenant.getMinutes() + BOUTIQUE.delaiMini);
+  }
+  const liste = [];
+  for (let m = debut; m <= fin; m += BOUTIQUE.dureeCreneau) if (m >= mini) liste.push(m);
+  return liste;
+}
+
+function joursOuverts(nombre) {
+  const jours = [];
+  const maintenant = new Date();
+  for (let i = 0; i < 45 && jours.length < nombre; i++) {
+    const d = new Date(maintenant.getFullYear(), maintenant.getMonth(), maintenant.getDate() + i);
+    if (creneauxDu(d, maintenant).length) jours.push(d);
+  }
+  return jours;
+}
+
+function jourRelatif(date, long) {
+  const auj = new Date();
+  const ecart = Math.round((new Date(date.getFullYear(), date.getMonth(), date.getDate()) - new Date(auj.getFullYear(), auj.getMonth(), auj.getDate())) / 864e5);
+  if (ecart === 0) return "Aujourd'hui";
+  if (ecart === 1) return 'Demain';
+  const txt = date.toLocaleDateString('fr-FR', long ? { weekday: 'long', day: 'numeric', month: 'long' } : { weekday: 'short', day: 'numeric', month: 'short' });
+  return txt.charAt(0).toUpperCase() + txt.slice(1);
+}
+
+function etatBoutique() {
+  const n = new Date();
+  const min = n.getHours() * 60 + n.getMinutes();
+  const h = BOUTIQUE.horaires[n.getDay()];
+  if (h && min >= enMinutes(h[0]) && min < enMinutes(h[1])) return { ouvert: true, texte: `Ouvert jusqu'à ${heureFr(enMinutes(h[1]))}` };
+  if (h && min < enMinutes(h[0])) return { ouvert: false, texte: `Fermé, ouvre aujourd'hui à ${heureFr(enMinutes(h[0]))}` };
+  for (let i = 1; i <= 7; i++) {
+    const d = new Date(n.getFullYear(), n.getMonth(), n.getDate() + i);
+    const hh = BOUTIQUE.horaires[d.getDay()];
+    if (hh) return { ouvert: false, texte: `Fermé, ouvre ${i === 1 ? 'demain' : NOMS_JOURS[d.getDay()].toLowerCase()} à ${heureFr(enMinutes(hh[0]))}` };
+  }
+  return { ouvert: false, texte: 'Fermé' };
+}
+
+/* ==================================================================
+   Intro
+================================================================== */
+const intro = $('#intro');
+let minuterieIntro;
+function finIntro() {
+  clearTimeout(minuterieIntro);
+  intro.classList.add('is-done');
+  document.body.classList.remove('is-locked');
+  try { sessionStorage.setItem('ps-intro', '1'); } catch (e) {}
+}
+function jouerIntro() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.documentElement.classList.remove('no-intro');
+  intro.classList.remove('is-done', 'play');
+  void intro.offsetWidth;
+  intro.classList.add('play');
+  document.body.classList.add('is-locked');
+  window.scrollTo(0, 0);
+  minuterieIntro = setTimeout(finIntro, 5300);
+}
+$('#introPasser').addEventListener('click', finIntro);
+$('#introRevoir').addEventListener('click', jouerIntro);
+if (!document.documentElement.classList.contains('no-intro')) jouerIntro();
+
+/* ==================================================================
+   État d'ouverture, horaires, prochain créneau
+================================================================== */
+function afficherEtat() {
+  const e = etatBoutique();
+  $$('[data-etat]').forEach(el => {
+    el.classList.toggle('is-ouvert', e.ouvert);
+    $('[data-etat-texte]', el).textContent = e.texte;
+  });
+}
+function afficherHoraires() {
+  const auj = new Date().getDay();
+  $('#telSemaine').innerHTML = [1, 2, 3, 4, 5, 6, 0].map(j =>
+    `<li class="${BOUTIQUE.horaires[j] ? 'is-ouvert' : ''}${j === auj ? ' is-jour' : ''}">${NOMS_JOURS[j][0]}</li>`).join('');
+  $('#horaires').innerHTML = [1, 2, 3, 4, 5, 6, 0].map(j => {
+    const h = BOUTIQUE.horaires[j];
+    const cls = [j === auj ? 'is-jour' : '', h ? '' : 'is-ferme'].join(' ').trim();
+    return `<tr class="${cls}"><th scope="row">${NOMS_JOURS[j]}</th><td>${h ? `${heureFr(enMinutes(h[0]))} à ${heureFr(enMinutes(h[1]))}` : 'Fermé'}</td></tr>`;
+  }).join('');
+}
+
+/* ==================================================================
+   Tarifs
+================================================================== */
+const vue = { marque: Object.keys(TARIFS)[0], modele: null };
+vue.modele = Object.keys(TARIFS[vue.marque])[0];
+
+function puces(liste, actif, attribut) {
+  return liste.map(x => `<button type="button" class="puce${x === actif ? ' is-on' : ''}" data-${attribut}="${esc(x)}" aria-pressed="${x === actif}">${esc(x)}</button>`).join('');
+}
+function afficherTarifs() {
+  $('#marques').innerHTML = puces(Object.keys(TARIFS), vue.marque, 'marque');
+  $('#modeles').innerHTML = puces(Object.keys(TARIFS[vue.marque]), vue.modele, 'modele');
+  $('#prixTitre').textContent = vue.modele;
+  $('#prixLignes').innerHTML = REPARATIONS.map((nom, i) => {
+    const p = TARIFS[vue.marque][vue.modele][i];
+    return `<tr><th scope="row">${nom}</th>` +
+      `<td class="prix${p == null ? ' devis' : ''}">${p == null ? 'Sur devis' : euros(p)}</td>` +
+      `<td class="act"><button type="button" class="btn btn-ligne btn-petit" data-reserver="${i}" aria-label="Prendre rendez-vous : ${esc(nom)}, ${esc(vue.modele)}">Rendez-vous</button></td></tr>`;
+  }).join('');
+}
+$('#marques').addEventListener('click', e => {
+  const b = e.target.closest('[data-marque]'); if (!b) return;
+  vue.marque = b.dataset.marque; vue.modele = Object.keys(TARIFS[vue.marque])[0]; afficherTarifs();
+});
+$('#modeles').addEventListener('click', e => {
+  const b = e.target.closest('[data-modele]'); if (!b) return;
+  vue.modele = b.dataset.modele; afficherTarifs();
+});
+$('#prixLignes').addEventListener('click', e => {
+  const b = e.target.closest('[data-reserver]'); if (!b) return;
+  rdv.marque = vue.marque; rdv.modele = vue.modele; rdv.panne = REPARATIONS[+b.dataset.reserver];
+  afficherFormulaire();
+  $('#rdv').scrollIntoView();
+});
+
+/* ==================================================================
+   Rendez-vous
+================================================================== */
+const AUTRE_MARQUE = 'Autre marque';
+const AUTRE_MODELE = 'Autre modèle';
+const rdv = { marque: Object.keys(TARIFS)[0], modele: null, panne: null, jour: null, heure: null };
+rdv.modele = Object.keys(TARIFS[rdv.marque])[0];
+
+const fMarque = $('#fMarque'), fModele = $('#fModele'), fAutre = $('#fAutre');
+
+function prixIndicatif() {
+  const i = REPARATIONS.indexOf(rdv.panne);
+  const p = TARIFS[rdv.marque] && TARIFS[rdv.marque][rdv.modele] ? TARIFS[rdv.marque][rdv.modele][i] : null;
+  return i >= 0 && p != null ? p : null;
+}
+function nomAppareil() {
+  if (rdv.marque === AUTRE_MARQUE || rdv.modele === AUTRE_MODELE) return fAutre.value.trim();
+  return rdv.modele;
+}
+function texteCreneau() {
+  if (!rdv.jour || rdv.heure == null) return '';
+  const d = depuisCle(rdv.jour);
+  return `${d.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' })} à ${heureFr(rdv.heure)}`;
+}
+
+function afficherFormulaire() {
+  // Appareil
+  const marques = [...Object.keys(TARIFS), AUTRE_MARQUE];
+  fMarque.innerHTML = marques.map(m => `<option${m === rdv.marque ? ' selected' : ''}>${esc(m)}</option>`).join('');
+  const modeles = rdv.marque === AUTRE_MARQUE ? [AUTRE_MODELE] : [...Object.keys(TARIFS[rdv.marque]), AUTRE_MODELE];
+  if (!modeles.includes(rdv.modele)) rdv.modele = modeles[0];
+  fModele.innerHTML = modeles.map(m => `<option${m === rdv.modele ? ' selected' : ''}>${esc(m)}</option>`).join('');
+  $('#champAutre').hidden = !(rdv.marque === AUTRE_MARQUE || rdv.modele === AUTRE_MODELE);
+
+  // Panne
+  $('#fPannes').innerHTML = [...REPARATIONS, ...PANNES_HORS_GRILLE].map(p =>
+    `<label><input type="radio" name="panne" value="${esc(p)}"${p === rdv.panne ? ' checked' : ''}>${esc(p)}</label>`).join('');
+
+  // Créneau
+  const jours = joursOuverts(BOUTIQUE.joursProposes);
+  if (!jours.some(d => cleJour(d) === rdv.jour)) { rdv.jour = jours.length ? cleJour(jours[0]) : null; rdv.heure = null; }
+  $('#fJours').innerHTML = jours.length
+    ? jours.map(d => { const c = cleJour(d); return `<button type="button" class="puce${c === rdv.jour ? ' is-on' : ''}" data-jour="${c}" aria-pressed="${c === rdv.jour}">${jourRelatif(d)}</button>`; }).join('')
+    : '<p class="vide">Aucun créneau en ligne pour le moment. Appelez la boutique.</p>';
+  const heures = rdv.jour ? creneauxDu(depuisCle(rdv.jour)) : [];
+  if (!heures.includes(rdv.heure)) rdv.heure = null;
+  $('#fHeures').innerHTML = heures.length
+    ? heures.map(m => `<button type="button" class="puce${m === rdv.heure ? ' is-on' : ''}" data-heure="${m}" aria-pressed="${m === rdv.heure}">${heureFr(m)}</button>`).join('')
+    : '<p class="vide">Choisissez d\'abord un jour.</p>';
+
+  afficherRecap();
+}
+
+function ligneRecap(id, valeur, defaut) {
+  const el = $(id);
+  el.textContent = valeur || defaut;
+  el.classList.toggle('is-vide', !valeur);
+}
+function afficherRecap() {
+  const p = prixIndicatif();
+  ligneRecap('#rAppareil', nomAppareil(), 'À préciser');
+  ligneRecap('#rPanne', rdv.panne, 'À choisir');
+  ligneRecap('#rPrix', p != null ? euros(p) : (rdv.panne ? 'Sur devis' : ''), 'Selon la réparation');
+  const c = texteCreneau();
+  ligneRecap('#rCreneau', c ? c.charAt(0).toUpperCase() + c.slice(1) : '', 'À choisir');
+}
+
+fMarque.addEventListener('change', () => { rdv.marque = fMarque.value; rdv.modele = null; afficherFormulaire(); });
+fModele.addEventListener('change', () => { rdv.modele = fModele.value; afficherFormulaire(); });
+fAutre.addEventListener('input', afficherRecap);
+$('#fPannes').addEventListener('change', e => { rdv.panne = e.target.value; afficherRecap(); });
+$('#fJours').addEventListener('click', e => {
+  const b = e.target.closest('[data-jour]'); if (!b) return;
+  rdv.jour = b.dataset.jour; rdv.heure = null; afficherFormulaire();
+});
+$('#fHeures').addEventListener('click', e => {
+  const b = e.target.closest('[data-heure]'); if (!b) return;
+  rdv.heure = +b.dataset.heure; afficherFormulaire();
+});
+
+const alerte = $('#alerte');
+function dire(texte, type) { alerte.textContent = texte; alerte.className = `alerte ${type ? 'is-' + type : ''}`; }
+
+function verifier() {
+  const nom = $('#fNom').value.trim(), tel = $('#fTel').value.trim();
+  if (!nomAppareil()) return { champ: fAutre, message: 'Indiquez la marque et le modèle de votre appareil.' };
+  if (!rdv.panne) return { champ: $('#fPannes input'), message: 'Choisissez la panne à réparer.' };
+  if (!rdv.jour || rdv.heure == null) return { champ: $('#fHeures button') || $('#fJours button'), message: 'Choisissez un jour et une heure.' };
+  if (!nom) return { champ: $('#fNom'), message: 'Indiquez votre nom.' };
+  if (tel.replace(/\D/g, '').length < 9) return { champ: $('#fTel'), message: 'Indiquez un numéro de téléphone valide pour que la boutique puisse vous confirmer le créneau.' };
+  return null;
+}
+
+function messageDemande() {
+  const p = prixIndicatif();
+  const note = $('#fNote').value.trim();
+  return [
+    'Bonjour, je souhaite prendre rendez-vous chez Phone Store.',
+    '',
+    `Appareil : ${nomAppareil()}`,
+    `Réparation : ${rdv.panne}${p != null ? ` (tarif indicatif ${euros(p)})` : ''}`,
+    `Créneau souhaité : ${texteCreneau()}`,
+    `Nom : ${$('#fNom').value.trim()}`,
+    `Téléphone : ${$('#fTel').value.trim()}`,
+    note ? `Précision : ${note}` : null,
+    '',
+    'Merci de me confirmer le rendez-vous.'
+  ].filter(l => l !== null).join('\n');
+}
+
+/* Point de branchement unique : pour une réservation avec confirmation
+   automatique, remplacer le contenu de cette fonction par un appel
+   à une API (route Next.js, Cal.com, etc.). */
+function envoyerDemande(canal) {
+  const texte = encodeURIComponent(messageDemande());
+  const liens = {
+    whatsapp: `https://wa.me/${BOUTIQUE.telIntl}?text=${texte}`,
+    sms: `sms:+${BOUTIQUE.telIntl}?&body=${texte}`,
+    email: `mailto:${BOUTIQUE.email}?subject=${encodeURIComponent('Demande de rendez-vous, ' + nomAppareil())}&body=${texte}`
+  };
+  if (canal === 'whatsapp') window.open(liens.whatsapp, '_blank', 'noopener');
+  else window.location.href = liens[canal];
+}
+
+$$('[data-envoi]').forEach(b => b.addEventListener('click', () => {
+  const erreur = verifier();
+  if (erreur) {
+    dire(erreur.message, 'erreur');
+    if (erreur.champ) erreur.champ.focus();
+    return;
+  }
+  envoyerDemande(b.dataset.envoi);
+  const appli = { whatsapp: 'WhatsApp', sms: 'votre appli de SMS', email: 'votre messagerie' }[b.dataset.envoi];
+  dire(`Votre demande est prête dans ${appli}. Validez l'envoi : Phone Store vous confirme le créneau par message.`, 'ok');
+}));
+
+/* Prochain créneau, sur le téléphone de l'accueil */
+function afficherProchainCreneau() {
+  const jours = joursOuverts(1);
+  if (!jours.length) return;
+  const d = jours[0], m = creneauxDu(d)[0];
+  $('#telCreneau').textContent = `${jourRelatif(d, true)} à ${heureFr(m)}`;
+  $('#telReserver').onclick = () => {
+    rdv.jour = cleJour(d); rdv.heure = m;
+    afficherFormulaire();
+    $('#rdv').scrollIntoView();
+  };
+}
+
+/* ==================================================================
+   Démarrage
+================================================================== */
+afficherEtat();
+afficherHoraires();
+afficherTarifs();
+afficherFormulaire();
+afficherProchainCreneau();
+setInterval(() => { afficherEtat(); afficherProchainCreneau(); }, 60000);
+</script>
+</body>
+</html>
